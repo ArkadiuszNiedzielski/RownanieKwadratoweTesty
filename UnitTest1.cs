@@ -45,11 +45,11 @@ namespace RownanieKwadratowe1.Testy
             double wynik_x_1 = o2.x1;
             double wynik_x_2 = o2.x2;
             double wynik_prawidlowy_x1 = 1.5;
-           // double wynik_prawidlowy_x2 = 1.5;
+            double wynik_prawidlowy_x2 = -1;
 
             //assert
-            Assert.Equal(wynik_prawidlowy_x1, wynik_x_1 );
-            //Assert.Equal(wynik_prawidlowy_x2, wynik_x_2);
+            Assert.Equal(wynik_prawidlowy_x1, wynik_x_1);
+            Assert.Equal(wynik_prawidlowy_x2, wynik_x_2);
 
 
             
