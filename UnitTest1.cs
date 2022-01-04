@@ -29,7 +29,5 @@ namespace RownanieKwadratowe1.Testy
 
             Assert.Equal(wynikDelty, wynik);
         }
-        //herher
-
     }
 }
