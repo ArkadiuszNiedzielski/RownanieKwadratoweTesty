@@ -32,11 +32,11 @@ namespace RownanieKwadratowe1.Testy
 
 
         [Theory]
-        [InlineData(-2, 1, 3, 25,1.5,-1)]
-        /*[InlineData(-3, 0, 4, 48)]
-        [InlineData(2, 1, 1, -7)]
-        [InlineData(2, 4, 2, 0)]*/
-        public void liczRownanie_SprawdzanieObliczeñDlaPierwiastkow_dlaDeltyDodatniej(double a, double b, double c, double delta, double wynik1, double wynik2)
+        [InlineData(-2, 1, 3,1.5,-1)]
+        [InlineData(1, 4, 3,3,-1)]
+        [InlineData(1, 3, -4, -4,1)]
+        [InlineData(-2, 1, 4, 1.69, -1.19)]
+        public void liczRownanie_SprawdzanieObliczeñDlaPierwiastkow_dlaDeltyDodatniej(double a, double b, double c, double wynik1, double wynik2)
         {
             //arange
             RownanieKwadratowe o2 = new RownanieKwadratowe();
