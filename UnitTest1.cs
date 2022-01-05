@@ -51,5 +51,24 @@ namespace RownanieKwadratowe1.Testy
             Assert.Equal(wynik2, o2.x2);
 
         }
+
+
+        [Theory]
+        [InlineData(1, 2, 1, -1)]
+        [InlineData(3, -6, 3, 1)]
+        [InlineData(1, -4, 4, 2)]
+        public void liczRownanie_SprawdzanieObliczeñDlaPierwiastkow_dlaDeltyZerowej(double a, double b, double c, double wynik)
+        {
+            //arange
+            RownanieKwadratowe o3 = new RownanieKwadratowe();
+
+            //act
+            o3.liczRownanie();
+            wynik = o3.x1;
+
+            //assert
+            Assert.Equal(wynik, o3.x1);
+
+        }
     }
 }
