@@ -26,6 +26,7 @@ namespace RownanieKwadratowe1
             catch
             {
                 Console.WriteLine("Nieprawidłowe dane, kończę program");
+                Environment.Exit(0);
             }
         }
 
