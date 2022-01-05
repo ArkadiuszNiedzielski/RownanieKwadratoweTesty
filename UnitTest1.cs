@@ -11,7 +11,7 @@ namespace RownanieKwadratowe1.Testy
         [InlineData(2, 1, 1, -7)]
         [InlineData(2, 4, 2, 0)]
 
-        public void liczRownanie_SprawdzanieObliczeñDlaDelty(double a, double b, double c, double wynik)
+        public void liczRownanie_SprawdzObliczenia_PorownajWyniki(double a, double b, double c, double wynik)
         {
             //arrange
             RownanieKwadratowe o1 = new RownanieKwadratowe();
@@ -36,7 +36,7 @@ namespace RownanieKwadratowe1.Testy
         [InlineData(1, 4, 3,3,-1)]
         [InlineData(1, 3, -4, -4,1)]
         [InlineData(-2, 1, 4, 1.69, -1.19)]
-        public void liczRownanie_SprawdzanieObliczeñDlaDeltyDodatniej(double a, double b, double c, double wynik1, double wynik2)
+        public void liczRownanie_SprawdzanieObliczeñDlaDeltyDodatniej_PorownynieWynikow(double a, double b, double c, double wynik1, double wynik2)
         {
             //arange
             RownanieKwadratowe o2 = new RownanieKwadratowe();
@@ -57,7 +57,7 @@ namespace RownanieKwadratowe1.Testy
         [InlineData(1, 2, 1, -1)]
         [InlineData(3, -6, 3, 1)]
         [InlineData(1, -4, 4, 2)]
-        public void liczRownanie_SprawdzanieObliczeñDlaDeltyZerowej(double a, double b, double c, double wynik)
+        public void liczRownanie_SprawdzanieObliczeñDlaDeltyZerowej_PorownynieWynikow(double a, double b, double c, double wynik)
         {
             //arange
             RownanieKwadratowe o3 = new RownanieKwadratowe();
@@ -71,26 +71,29 @@ namespace RownanieKwadratowe1.Testy
 
         }
 
-
+        
         [Theory]
         [InlineData(2, 2, 3)]
         [InlineData(3, 4, 5)]
         [InlineData(5, 4, 4)]
-        public void liczRownanie_SprawdzanieObliczeñDlaDeltyUjemnej(double a, double b, double c)
+        public void liczRownanie_SprawdzanieObliczeñDlaDeltyUjemnej_PorownynieWynikow(double a, double b, double c)
         {
             //arange
             RownanieKwadratowe o4 = new RownanieKwadratowe();
 
             //act
             o4.liczRownanie();
+            bool zmienna = double.IsNaN(o4.x1);          // zmienna pomocnicza do przechowywania wartoœci warunku
+            bool zmienna2 = double.IsNegative(o4.delta);
 
             //assert
 
-           bool zmienna = double.IsNaN(o4.x1);          // zmienne pomocnicze do przechowywania wartoœci warunku
-                  
+            Assert.True(zmienna);                      // niestety, nie uda³o mi siê ustaliæ, 
+            Assert.Equal(0, o4.x2);                    // dlaczego tak siê dzieje x1=NaN x2=0
+            Assert.True(zmienna2);
 
 
-            Assert.True(zmienna);
+
 
         }
     }
