@@ -36,7 +36,7 @@ namespace RownanieKwadratowe1.Testy
         [InlineData(1, 4, 3,3,-1)]
         [InlineData(1, 3, -4, -4,1)]
         [InlineData(-2, 1, 4, 1.69, -1.19)]
-        public void liczRownanie_SprawdzanieObliczeñDlaPierwiastkow_dlaDeltyDodatniej(double a, double b, double c, double wynik1, double wynik2)
+        public void liczRownanie_SprawdzanieObliczeñDlaDeltyDodatniej(double a, double b, double c, double wynik1, double wynik2)
         {
             //arange
             RownanieKwadratowe o2 = new RownanieKwadratowe();
@@ -57,7 +57,7 @@ namespace RownanieKwadratowe1.Testy
         [InlineData(1, 2, 1, -1)]
         [InlineData(3, -6, 3, 1)]
         [InlineData(1, -4, 4, 2)]
-        public void liczRownanie_SprawdzanieObliczeñDlaPierwiastkow_dlaDeltyZerowej(double a, double b, double c, double wynik)
+        public void liczRownanie_SprawdzanieObliczeñDlaDeltyZerowej(double a, double b, double c, double wynik)
         {
             //arange
             RownanieKwadratowe o3 = new RownanieKwadratowe();
@@ -68,6 +68,29 @@ namespace RownanieKwadratowe1.Testy
 
             //assert
             Assert.Equal(wynik, o3.x1);
+
+        }
+
+
+        [Theory]
+        [InlineData(2, 2, 3)]
+        [InlineData(3, 4, 5)]
+        [InlineData(5, 4, 4)]
+        public void liczRownanie_SprawdzanieObliczeñDlaDeltyUjemnej(double a, double b, double c)
+        {
+            //arange
+            RownanieKwadratowe o4 = new RownanieKwadratowe();
+
+            //act
+            o4.liczRownanie();
+
+            //assert
+
+           bool zmienna = double.IsNaN(o4.x1);          // zmienne pomocnicze do przechowywania wartoœci warunku
+                  
+
+
+            Assert.True(zmienna);
 
         }
     }
